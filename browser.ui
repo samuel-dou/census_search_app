@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface version="1.0">
+  <object class="ttk.Frame" id="top_frame">
+    <property name="height">200</property>
+    <property name="padding">5</property>
+    <property name="width">200</property>
+    <layout manager="grid">
+      <property name="propagate">True</property>
+      <property name="sticky">nsew</property>
+    </layout>
+    <child>
+      <object class="ttk.Frame" id="control_frame">
+        <property name="height">200</property>
+        <property name="padding">3</property>
+        <property name="width">200</property>
+        <layout manager="grid">
+          <property name="propagate">True</property>
+          <property name="sticky">ew</property>
+          <property type="col" id="0" name="weight">1</property>
+        </layout>
+        <child>
+          <object class="ttk.Combobox" id="gender_combo">
+            <property name="justify">left</property>
+            <property name="state">readonly</property>
+            <property name="textvariable">string:gender_combo_variable</property>
+            <property name="validate">none</property>
+            <property name="values">M F</property>
+            <property name="width">3</property>
+            <bind sequence="&lt;&lt;ComboboxSelected&gt;&gt;" handler="gender_selected" add="" />
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="padx">3</property>
+              <property name="propagate">True</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="name_label">
+            <property name="anchor">e</property>
+            <property name="cursor">arrow</property>
+            <property name="justify">right</property>
+            <property name="takefocus">false</property>
+            <property name="text" translatable="yes">Name:</property>
+            <layout manager="grid">
+              <property name="column">2</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+              <property name="sticky">e</property>
+              <property type="col" id="1" name="weight">1</property>
+              <property type="col" id="2" name="weight">0</property>
+              <property type="col" id="3" name="weight">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Entry" id="name_entry">
+            <property name="cursor">arrow</property>
+            <property name="exportselection">true</property>
+            <property name="justify">left</property>
+            <property name="text" translatable="yes">John</property>
+            <property name="textvariable">string:name_entry_variable</property>
+            <bind sequence="&lt;KeyRelease&gt;" handler="name_changed" add="" />
+            <layout manager="grid">
+              <property name="column">3</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+              <property name="sticky">w</property>
+              <property type="col" id="2" name="weight">1</property>
+              <property type="col" id="3" name="weight">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="label_3">
+            <property name="text" translatable="yes">Gender:</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="padx">3</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="pygubu.builder.widgets.scrollbarhelper" id="scrollbarhelper_1">
+        <property name="scrolltype">both</property>
+        <property name="usemousewheel">false</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">1</property>
+          <property name="sticky">nsew</property>
+          <property type="col" id="0" name="weight">1</property>
+          <property type="row" id="1" name="weight">1</property>
+        </layout>
+        <child>
+          <object class="ttk.Treeview" id="treeview">
+            <property name="height">15</property>
+            <property name="selectmode">extended</property>
+            <property name="show">headings</property>
+            <layout manager="grid">
+              <property name="propagate">True</property>
+              <property name="sticky">nsew</property>
+              <property type="col" id="0" name="weight">1</property>
+              <property type="row" id="0" name="weight">1</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
